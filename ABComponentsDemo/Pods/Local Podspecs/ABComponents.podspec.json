@@ -22,6 +22,11 @@
     "ABComponents/**/*.swift"
   ],
   "exclude_files": "ABComponents/**/*.plist",
+  "resource_bundles": {
+    "ABComponents": [
+      "ABComponents/ABComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}"
+    ]
+  },
   "requires_arc": true,
   "dependencies": {
     "HandyJSON": [
@@ -34,7 +39,7 @@
       "~> 11.1.0"
     ],
     "BPComponents": [
-      "0.0.2"
+      "~> 0.0.2"
     ]
   }
 }

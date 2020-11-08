@@ -1,6 +1,6 @@
 PODS:
   - ABComponents (0.0.1):
-    - BPComponents (= 0.0.2)
+    - BPComponents (~> 0.0.2)
     - HandyJSON (~> 5.0.2)
     - ReactiveCocoa (~> 11.1.0)
     - SnapKit (~> 5.0.1)
@@ -34,7 +34,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/wupeng4321/BPComponents.git
 
 SPEC CHECKSUMS:
-  ABComponents: 6070539338fe18d58886366678478f713831ed38
+  ABComponents: eac7fb8903b241b3bcc1506fe93e51f0df48b9b4
   BPComponents: 58cc14cc6c7a6f746fe52c7b29dd43ae6a206cf6
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   ReactiveCocoa: 7bc87ad2d361b9de141278b1950edd7fe91b15b1
