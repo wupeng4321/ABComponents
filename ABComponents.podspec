@@ -139,6 +139,6 @@ Pod::Spec.new do |spec|
   spec.dependency "HandyJSON", "~> 5.0.2"
   spec.dependency "SnapKit", "~> 5.0.1"
   spec.dependency "ReactiveCocoa", "~> 11.1.0"
-  spec.dependency "BPComponents", "~> 0.0.2"
+  spec.dependency "BPComponents", "~> 0.0.3"
 
 end
