@@ -1,0 +1,29 @@
+platform :ios, '13.0'
+install! 'cocoapods'
+#generate_multiple_pod_projects:true,
+#incremental_installation:true
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+workspace 'ABComponentsDemo.xcworkspace'
+
+def fundation
+  
+#  pod "HandyJSON", "~> 5.0.2"
+#  pod "SnapKit", "~> 5.0.1"
+#  pod "ReactiveCocoa", "~> 11.1.0"
+  pod "BPComponents", :git => 'https://github.com/wupeng4321/BPComponents.git'
+  
+end
+
+target 'ABComponentsDemo' do
+  project 'ABComponentsDemo.project'
+  fundation
+  pod 'ABComponents', :path => '../'
+end
+
+target 'ABComponents' do
+  project '../ABComponents/ABComponents.project'
+end
+
+

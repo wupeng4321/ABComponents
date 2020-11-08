@@ -1,0 +1,6 @@
+module Pods_ABComponentsDemo {
+  umbrella header "Pods-ABComponentsDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
