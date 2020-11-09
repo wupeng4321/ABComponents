@@ -8,7 +8,7 @@
 
 import Foundation
 
-func writeToCachesDirectory(_ string: String) {
+public func writeToCachesDirectory(_ string: String) {
     
     let dic: URL = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).last!
     let fileurl =  dic.appendingPathComponent("iconFont.txt")

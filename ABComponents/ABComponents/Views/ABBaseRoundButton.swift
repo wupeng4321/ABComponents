@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 import BPComponents
 
-class ABBaseRoundButton: UIButton {
-    override init(frame: CGRect) {
+open class ABBaseRoundButton: UIButton {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.createUI()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func createUI() {
+    public func createUI() {
         self.clipsToBounds = true
         self.layer.cornerRadius = 5
         self.setTitleColor(Theme.colorWhite, for: .normal)

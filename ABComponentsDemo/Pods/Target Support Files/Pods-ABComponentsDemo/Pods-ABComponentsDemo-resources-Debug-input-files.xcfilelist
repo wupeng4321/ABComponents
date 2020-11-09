@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-ABComponentsDemo/Pods-ABComponentsDemo-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/ABComponents/ABComponents.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/BPComponents/BPComponents.bundle

@@ -16,7 +16,7 @@ open class ABBaseViewController: BPInitDeinitViewController {
         self.initNavbar()
     }
     
-    func initNavbar() {
+    public func initNavbar() {
         let leftNavBtn = UIButton.init()
         leftNavBtn.addTarget(self, action: #selector(back), for: .touchUpInside)
         leftNavBtn.titleLabel?.font = UIFont.iconfont(ofSize: 20)
@@ -28,7 +28,7 @@ open class ABBaseViewController: BPInitDeinitViewController {
         self.navigationItem.leftBarButtonItem = leftNavItem
     }
     
-    @objc func back() {
+    @objc public func back() {
 
         if bp_topViewController() != self {
             self.dismiss(animated: true, completion: nil)

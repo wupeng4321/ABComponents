@@ -25,7 +25,7 @@ public enum CommonViewComponent: Int {
     case CommonViewMax        = 0b10000000000
 }
 
-class ABBaseCellModel: NSObject {
+open class ABBaseCellModel: NSObject {
     /// 同一个cell 可能会有不同的UI 类型 (CommonViewComponent.rawValue total value)
     var componentValue: Int = 0
     /// 同一个cell 可能UI相同,功能都不相同
@@ -36,12 +36,12 @@ class ABBaseCellModel: NSObject {
     var dataModel: Any?
 }
 
-class ABBaseCell: UITableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+open class ABBaseCell: UITableViewCell {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
     }

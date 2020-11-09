@@ -1,5 +1,5 @@
 PODS:
-  - ABComponents (0.0.1):
+  - ABComponents (0.0.3):
     - BPComponents
     - HandyJSON
     - ReactiveCocoa
@@ -37,7 +37,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/wupeng4321/BPComponents.git
 
 SPEC CHECKSUMS:
-  ABComponents: 9c0c4a33d10667d88e691584f01f00bf371b632f
+  ABComponents: c4ff5976e9279de03e69af9686b5720ffc535749
   BPComponents: 58cc14cc6c7a6f746fe52c7b29dd43ae6a206cf6
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   ReactiveCocoa: 7bc87ad2d361b9de141278b1950edd7fe91b15b1

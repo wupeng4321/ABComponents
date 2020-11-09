@@ -10,24 +10,24 @@ import Foundation
 import HandyJSON
 
 
-class ABIconFontModel: HandyJSON {
-    required init() {}
-    var icon_id = ""
-    var name: String = ""
-    var font_class: String = ""
-    var unicode: String = ""
-    var unicode_decimal: String = ""
+open class ABIconFontModel: HandyJSON {
+    required public init() {}
+    public var icon_id = ""
+    public var name: String = ""
+    public var font_class: String = ""
+    public var unicode: String = ""
+    public var unicode_decimal: String = ""
 }
 
 
-class ABIconFontInfoModel: HandyJSON {
-    required init() {}
-    var id = "2156382"
-    var name: String = "AppBook"
-    var font_family: String = "iconfont"
-    var css_prefix_text: String = "icon-"
-    var description: String = ""
+open class ABIconFontInfoModel: HandyJSON {
+    required public init() {}
+    public var id = "2156382"
+    public var name: String = "AppBook"
+    public var font_family: String = "iconfont"
+    public var css_prefix_text: String = "icon-"
+    public var description: String = ""
     
-    var glyphs: [ABIconFontModel] = []
+    public var glyphs: [ABIconFontModel] = []
     
 }

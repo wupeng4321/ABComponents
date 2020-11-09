@@ -11,15 +11,15 @@ import UIKit
 import HandyJSON
 import BPComponents
 
-class ABBaseCommonDetailCellModel: NSObject, HandyJSON {
-    required override init() {}
-    var title: String?
-    var detail: String?
+open class ABBaseCommonDetailCellModel: NSObject, HandyJSON {
+    required public override init() {}
+    public var title: String?
+    public var detail: String?
 }
 
 
-class ABBaseCommonDetailCell: ABBaseCommonCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+open class ABBaseCommonDetailCell: ABBaseCommonCell {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         var value = 0
         value = value | CommonViewComponent.CommonImageView.rawValue
@@ -29,11 +29,11 @@ class ABBaseCommonDetailCell: ABBaseCommonCell {
         self.viewComponentValue = value
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var cellModel: ABBaseCellModel? {
+    public override var cellModel: ABBaseCellModel? {
         didSet {
             guard self.cellModel?.dataModel != nil else {return}
             if ((self.cellModel?.dataModel) as AnyObject).isKind(of: ABBaseCommonDetailCellModel.classForCoder()) {
@@ -48,7 +48,7 @@ class ABBaseCommonDetailCell: ABBaseCommonCell {
         }
     }
     
-    override func createUI() {
+    public override func createUI() {
         super.createUI()
         
         self.label.textColor = Theme.colorText
@@ -59,7 +59,7 @@ class ABBaseCommonDetailCell: ABBaseCommonCell {
         
     }
     
-    override func customizeLayout() {
+    public override func customizeLayout() {
         self.label.bp_backgroundColor()
         
         

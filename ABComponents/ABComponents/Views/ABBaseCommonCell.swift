@@ -12,21 +12,21 @@ import ReactiveCocoa
 
 
 
-class ABBaseCommonCell: ABBaseCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+open class ABBaseCommonCell: ABBaseCell {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewComponentValue: Int?) {
+    public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewComponentValue: Int?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.viewComponentValue = viewComponentValue
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var viewComponentValue: Int? {
+    public var viewComponentValue: Int? {
         didSet {
             self.createUI()
         }
@@ -138,7 +138,7 @@ class ABBaseCommonCell: ABBaseCell {
         return textView
     }()
     
-    override func prepareForReuse() {
+    open override func prepareForReuse() {
         self.label.isHidden         = true
         self.subLabel.isHidden      = true
         self.ssubLabel.isHidden     = true

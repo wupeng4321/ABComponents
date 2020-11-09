@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 
-class ABBaseCommonView: UIView {
-    var viewComponents: CommonViewComponent!
+open class ABBaseCommonView: UIView {
+    public var viewComponents: CommonViewComponent!
     
-    init(frame: CGRect, viewComponents: CommonViewComponent) {
+    public init(frame: CGRect, viewComponents: CommonViewComponent) {
         super.init(frame: frame)
         self.viewComponents = viewComponents
         self.createUI()
     }
     
-    init(viewComponents: CommonViewComponent? = .CommonLabel) {
+    public init(viewComponents: CommonViewComponent? = .CommonLabel) {
         super.init(frame: CGRect.zero)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

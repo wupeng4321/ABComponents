@@ -11,20 +11,20 @@ import UIKit
 import ReactiveCocoa
 import BPComponents
 
-class ABBaseInputCell: ABBaseCommonCell {
+open class ABBaseInputCell: ABBaseCommonCell {
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let rawValue = CommonViewComponent.CommonLabel.rawValue | CommonViewComponent.CommonTextView.rawValue
         self.viewComponentValue = rawValue
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var cellModel: ABBaseCellModel? {
+    public override var cellModel: ABBaseCellModel? {
         didSet {
             if ((self.cellModel?.dataModel) as AnyObject).isKind(of: NSString.classForCoder()) {
                 self.label.text = self.cellModel?.dataModel as? String
@@ -33,7 +33,7 @@ class ABBaseInputCell: ABBaseCommonCell {
         }
     }
 
-    override func createUI() {
+    public override func createUI() {
         super.createUI()
         
         self.label.textColor = Theme.colorText
@@ -42,7 +42,7 @@ class ABBaseInputCell: ABBaseCommonCell {
         self.textView.backgroundColor = Theme.colorBackground
     }
     
-    override func customizeLayout() {
+    public override func customizeLayout() {
         self.label.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().offset(bp_padding)
             make.right.equalToSuperview().offset(-bp_padding)
