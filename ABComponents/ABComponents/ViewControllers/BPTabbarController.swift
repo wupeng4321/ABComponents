@@ -1,6 +1,6 @@
 //
 //  BPTabBarController.swift
-//  AppBook
+//  ABComponents
 //
 //  Created by wupeng on 2020/10/23.
 //  Copyright © 2020 wupeng. All rights reserved.
@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import BPComponents
 
 open class BPTabbarController: UITabBarController {
     public init() {
@@ -24,7 +25,7 @@ open class BPTabbarController: UITabBarController {
     
     func getData() -> Array<BPTabbarModel> {
 //        guard let path = Bundle.main.path(forResource: "tabbar", ofType: "json") else { return [] }
-        guard let path = BPBundle.bundle.path(forResource: "tabbar", ofType: "json") else {
+        guard let path = ABBundle.bundle.path(forResource: "tabbar", ofType: "json") else {
             return []
         }
         
@@ -34,15 +35,16 @@ open class BPTabbarController: UITabBarController {
         
         let jsonData: [Dictionary] = try! JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [Dictionary<String, String>]
         
-        let jsonArr1: [BPTabbarModel] = []
+        var tabbarModels: [BPTabbarModel] = []
         for dic in jsonData {
-            let a = BPTabbarModel.init()
-            a.title = dic["title"] ?? ""
-            a.clsName = dic["clsName"] ?? ""
-            a.iconfont = dic["iconfont"] ?? ""
+            let tabbarModel = BPTabbarModel.init()
+            tabbarModel.title = dic["title"] ?? ""
+            tabbarModel.clsName = dic["clsName"] ?? ""
+            tabbarModel.iconfont = dic["iconfont"] ?? ""
+            tabbarModels.append(tabbarModel)
         }
 
-        return jsonArr1
+        return tabbarModels
     }
     
     

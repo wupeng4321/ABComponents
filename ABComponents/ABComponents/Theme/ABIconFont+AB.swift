@@ -1,9 +1,8 @@
 //
-//  ABIconFont.swift
-//  AppBook
+//  ABIconFont+AB.swift
+//  ABComponents
 //
-//  Created by wupeng on 2020/10/25.
-//  Copyright © 2020 wupeng. All rights reserved.
+//  Created by wupeng on 2020/11/9.
 //
 
 import Foundation
@@ -11,14 +10,14 @@ import UIKit
 
 public extension UIFont {
     ///初始化：iconFont
-    class func iconfont(ofSize: CGFloat) -> UIFont? {
+    public class func iconfont(ofSize: CGFloat) -> UIFont? {
     //iconFont,对应我们导入的名字，size,就是图标大小
         return UIFont.init(name: "iconFont", size: ofSize)
     }
 }
 
 public extension UILabel {
-    class func iconFont(from iconFont: String, size: CGFloat = 25, textColor: UIColor = .black) -> UILabel {
+    public class func iconFont(from iconFont: String, size: CGFloat = 25, textColor: UIColor = .black) -> UILabel {
         let label = UILabel.init()
         label.text = iconFont
         label.textAlignment = .center
@@ -36,7 +35,7 @@ public extension UIImage {
     ///   - textColor: 颜色
     ///   - backgroundColor: 背景色
     ///   - size: 图片大小
-    convenience init(from font: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize) {
+    public convenience init(from font: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize) {
         let drawText = font
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
@@ -57,7 +56,7 @@ public extension UIImage {
         }
     }
     
-    static func iconValue(from value: String, iconColor: UIColor = .black, imageSize: CGSize, ofSize size: CGFloat) -> UIImage {
+    public static func iconValue(from value: String, iconColor: UIColor = .black, imageSize: CGSize, ofSize size: CGFloat) -> UIImage {
         let drawText = value
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)

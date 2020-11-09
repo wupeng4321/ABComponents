@@ -1,10 +1,10 @@
 PODS:
-  - ABComponents (0.0.3):
+  - ABComponents (0.0.4):
     - BPComponents
     - HandyJSON
     - ReactiveCocoa
     - SnapKit
-  - BPComponents (0.0.2)
+  - BPComponents (0.0.4)
   - HandyJSON (5.0.2)
   - ReactiveCocoa (11.1.0):
     - ReactiveSwift (~> 6.2)
@@ -13,7 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - ABComponents (from `../`)
-  - BPComponents (from `https://github.com/wupeng4321/BPComponents.git`)
+  - BPComponents (from `https://github.com/wupeng4321/BPComponents.git`, branch `develop/base`)
   - HandyJSON (~> 5.0.2)
   - ReactiveCocoa (~> 11.1.0)
   - SnapKit (~> 5.0.1)
@@ -29,21 +29,22 @@ EXTERNAL SOURCES:
   ABComponents:
     :path: "../"
   BPComponents:
+    :branch: develop/base
     :git: https://github.com/wupeng4321/BPComponents.git
 
 CHECKOUT OPTIONS:
   BPComponents:
-    :commit: 57232639b79a9fa518828ace035cf5f9c0657619
+    :commit: c7a055f95de0f3bdfcc7de98359e94af1e88ee10
     :git: https://github.com/wupeng4321/BPComponents.git
 
 SPEC CHECKSUMS:
-  ABComponents: c4ff5976e9279de03e69af9686b5720ffc535749
-  BPComponents: 58cc14cc6c7a6f746fe52c7b29dd43ae6a206cf6
+  ABComponents: a33de728983b050d8ce08967c99773160d011fe4
+  BPComponents: 8f7086d83e3c9ee28fdbdd1788d4b344aff514c2
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   ReactiveCocoa: 7bc87ad2d361b9de141278b1950edd7fe91b15b1
   ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: d14d80f1232a32cc73a87f048f94d2e8dc3a1911
+PODFILE CHECKSUM: 097ee87a39478b22d64be9711eaa88b585306cd7
 
 COCOAPODS: 1.9.3
