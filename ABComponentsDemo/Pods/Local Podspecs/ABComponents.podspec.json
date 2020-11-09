@@ -17,29 +17,20 @@
     "git": "https://github.com/wupeng4321/ABComponents.git",
     "tag": "0.0.1"
   },
-  "source_files": [
-    "ABComponents/",
-    "ABComponents/**/*.swift"
-  ],
   "exclude_files": "ABComponents/**/*.plist",
-  "resource_bundles": {
-    "ABComponents": [
-      "ABComponents/ABComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}"
-    ]
-  },
   "requires_arc": true,
   "dependencies": {
     "HandyJSON": [
-      "~> 5.0.2"
+
     ],
     "SnapKit": [
-      "~> 5.0.1"
+
     ],
     "ReactiveCocoa": [
-      "~> 11.1.0"
+
     ],
     "BPComponents": [
-      "~> 0.0.3"
+
     ]
   }
 }

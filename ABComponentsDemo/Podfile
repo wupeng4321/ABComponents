@@ -9,9 +9,9 @@ workspace 'ABComponentsDemo.xcworkspace'
 
 def fundation
   
-#  pod "HandyJSON", "~> 5.0.2"
-#  pod "SnapKit", "~> 5.0.1"
-#  pod "ReactiveCocoa", "~> 11.1.0"
+  pod "HandyJSON", "~> 5.0.2"
+  pod "SnapKit", "~> 5.0.1"
+  pod "ReactiveCocoa", "~> 11.1.0"
   pod "BPComponents", :git => 'https://github.com/wupeng4321/BPComponents.git'
   
 end
