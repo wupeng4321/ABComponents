@@ -27,13 +27,13 @@ public enum CommonViewComponent: Int {
 
 open class ABBaseCellModel: NSObject {
     /// 同一个cell 可能会有不同的UI 类型 (CommonViewComponent.rawValue total value)
-    var componentValue: Int = 0
+    open var componentValue: Int = 0
     /// 同一个cell 可能UI相同,功能都不相同
-    var funcType: Int = 0
+    open var funcType: Int = 0
     /// 复用标记
-    var reuseIdentifier: String  = "ABBaseCell"
+    open var reuseIdentifier: String  = "ABBaseCell"
     /// 同一个cell 可能会有不同数据模型,子类自己实现
-    var dataModel: Any?
+    open var dataModel: Any?
 }
 
 open class ABBaseCell: UITableViewCell {
@@ -46,9 +46,9 @@ open class ABBaseCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var cellModel: ABBaseCellModel?
+    open var cellModel: ABBaseCellModel?
     
-    var showArrowLabel: Bool? {
+    open var showArrowLabel: Bool? {
         didSet {
             self.arrowRightLabel.isHidden = !self.showArrowLabel!
             if self.showArrowLabel! && !self.contentView.subviews .contains(self.arrowRightLabel) {
@@ -57,7 +57,7 @@ open class ABBaseCell: UITableViewCell {
         }
     }
     
-    func addArrowRightLabel() {
+    open func addArrowRightLabel() {
         self.contentView.addSubview(self.arrowRightLabel)
         
         self.arrowRightLabel.snp.makeConstraints { (make) in
@@ -68,7 +68,7 @@ open class ABBaseCell: UITableViewCell {
         }
     }
     
-    lazy var arrowRightLabel: UILabel = {
+    open lazy var arrowRightLabel: UILabel = {
         var label = UILabel.iconFont(from: ABIconfont.arrow_right.rawValue.toUnicode(), size: 15, textColor: Theme.colorGray)
         label.textAlignment = NSTextAlignment.right
         label.isHidden = true

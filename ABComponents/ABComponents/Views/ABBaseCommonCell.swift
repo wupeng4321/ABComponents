@@ -88,52 +88,52 @@ open class ABBaseCommonCell: ABBaseCell {
         
     }
     
-    lazy var label: UILabel = {
+    open lazy var label: UILabel = {
         let label = UILabel.init()
         return label
     }()
     
-    lazy var subLabel: UILabel = {
+    open lazy var subLabel: UILabel = {
         let label = UILabel.init()
         return label
     }()
     
-    lazy var ssubLabel: UILabel = {
+    open lazy var ssubLabel: UILabel = {
         let label = UILabel.init()
         return label
     }()
     
-    lazy var button: UIButton = {
+    open lazy var button: UIButton = {
         let btn = UIButton.init()
         return btn
     }()
     
-    lazy var subButton: UIButton = {
+    open lazy var subButton: UIButton = {
         let btn = UIButton.init()
         return btn
     }()
     
-    lazy var imgView: UIImageView = {
+    open lazy var imgView: UIImageView = {
         let imgView = UIImageView.init()
         return imgView
     }()
     
-    lazy var subImgView: UIImageView = {
+    open lazy var subImgView: UIImageView = {
         let imgView = UIImageView.init()
         return imgView
     }()
     
-    lazy var commonSwitch: UISwitch = {
+    open lazy var commonSwitch: UISwitch = {
         let commonSwitch = UISwitch.init()
         return commonSwitch
     }()
     
-    lazy var textField: UITextField = {
+    open lazy var textField: UITextField = {
         let textField = UITextField.init()
         return textField
     }()
     
-    lazy var textView: UITextView = {
+    open lazy var textView: UITextView = {
         let textView = UITextView.init()
         return textView
     }()
