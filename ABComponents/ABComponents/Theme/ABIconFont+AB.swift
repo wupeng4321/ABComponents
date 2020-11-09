@@ -9,15 +9,33 @@ import Foundation
 import UIKit
 
 public extension UIFont {
+    /// 注册自定义字体
+    class func registerFont(with url:URL) -> Bool {
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            return false
+        }
+        let fontDataProvider: CGDataProvider = CGDataProvider(url: url as CFURL)!
+        let newFont: CGFont = CGFont.init(fontDataProvider)!
+        CTFontManagerRegisterGraphicsFont(newFont, nil)
+        return true
+    }
     ///初始化：iconFont
-    public class func iconfont(ofSize: CGFloat) -> UIFont? {
-    //iconFont,对应我们导入的名字，size,就是图标大小
-        return UIFont.init(name: "iconFont", size: ofSize)
+     class func iconfont(ofSize: CGFloat) -> UIFont? {
+        let font = UIFont.init(name: "iconFont", size: ofSize)
+        if font == nil {
+            let path = ABBundle.bundle.path(forResource: "iconfont", ofType: "ttf")!
+            let url = URL.init(fileURLWithPath: path)
+            guard UIFont.registerFont(with: url) else {
+                return UIFont.systemFont(ofSize: ofSize)
+            }
+            return UIFont.init(name: "iconFont", size: ofSize)
+        }
+        return font
     }
 }
 
 public extension UILabel {
-    public class func iconFont(from iconFont: String, size: CGFloat = 25, textColor: UIColor = .black) -> UILabel {
+    class func iconFont(from iconFont: String, size: CGFloat = 25, textColor: UIColor = .black) -> UILabel {
         let label = UILabel.init()
         label.text = iconFont
         label.textAlignment = .center
@@ -35,7 +53,7 @@ public extension UIImage {
     ///   - textColor: 颜色
     ///   - backgroundColor: 背景色
     ///   - size: 图片大小
-    public convenience init(from font: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize) {
+    convenience init(from font: String, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize) {
         let drawText = font
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
@@ -56,7 +74,7 @@ public extension UIImage {
         }
     }
     
-    public static func iconValue(from value: String, iconColor: UIColor = .black, imageSize: CGSize, ofSize size: CGFloat) -> UIImage {
+    static func iconValue(from value: String, iconColor: UIColor = .black, imageSize: CGSize, ofSize size: CGFloat) -> UIImage {
         let drawText = value
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, UIScreen.main.scale)

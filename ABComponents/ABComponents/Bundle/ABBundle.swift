@@ -8,7 +8,7 @@
 import Foundation
 
 public class ABBundle: NSObject {
-    static var bundle: Bundle = {
+    public static var bundle: Bundle = {
         var bundlePathStr: String = Bundle.init(for: ABBundle.classForCoder()).resourcePath!
         bundlePathStr = bundlePathStr + "/ABComponents.bundle"
         return Bundle.init(path: bundlePathStr)!
