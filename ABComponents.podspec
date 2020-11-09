@@ -122,7 +122,7 @@ Pod::Spec.new do |spec|
   # spec.libraries = "iconv", "xml2"
   
   spec.resource_bundles = {
-    'ABComponents' =>  ['ABComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}'],
+    'ABComponents' =>  ['ABComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json,ttf}'],
 
   }
 
