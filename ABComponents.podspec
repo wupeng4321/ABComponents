@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ABComponents"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "ABComponents"
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #spec.source_files  = "ABComponents/", "ABComponents/**/*.swift"
+  spec.source_files  = "ABComponents/", "ABComponents/**/*.swift"
   spec.exclude_files = "ABComponents/**/*.plist"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -121,10 +121,10 @@ Pod::Spec.new do |spec|
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
   
-#  spec.resource_bundles = {
-#    'ABComponents' =>  ['ABComponents/ABComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}'],
-#
-#  }
+  spec.resource_bundles = {
+    'ABComponents' =>  ['ABComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}'],
+
+  }
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
