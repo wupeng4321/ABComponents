@@ -1,5 +1,5 @@
 //
-//  BPTabBarController.swift
+//  ABTabbarController.swift
 //  ABComponents
 //
 //  Created by wupeng on 2020/10/23.
@@ -10,10 +10,10 @@ import UIKit
 import Foundation
 import BPComponents
 
-open class BPTabbarController: UITabBarController {
+open class ABTabbarController: UITabBarController {
     public init() {
         super.init(nibName: nil, bundle: nil)
-        let tabbars: [BPTabbarModel] = self.getData()
+        let tabbars: [ABTabbarModel] = self.getData()
         self.setUpAllChildViewControllers(tabbars: tabbars);
         self.tabBar.tintColor = Theme.colorTheme
     }
@@ -23,7 +23,7 @@ open class BPTabbarController: UITabBarController {
     }
     
     
-    func getData() -> Array<BPTabbarModel> {
+    func getData() -> Array<ABTabbarModel> {
 //        guard let path = Bundle.main.path(forResource: "tabbar", ofType: "json") else { return [] }
         guard let path = ABBundle.bundle.path(forResource: "tabbar", ofType: "json") else {
             return []
@@ -35,9 +35,9 @@ open class BPTabbarController: UITabBarController {
         
         let jsonData: [Dictionary] = try! JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [Dictionary<String, String>]
         
-        var tabbarModels: [BPTabbarModel] = []
+        var tabbarModels: [ABTabbarModel] = []
         for dic in jsonData {
-            let tabbarModel = BPTabbarModel.init()
+            let tabbarModel = ABTabbarModel.init()
             tabbarModel.title = dic["title"] ?? ""
             tabbarModel.clsName = dic["clsName"] ?? ""
             tabbarModel.iconfont = dic["iconfont"] ?? ""
@@ -48,7 +48,7 @@ open class BPTabbarController: UITabBarController {
     }
     
     
-    func setUpAllChildViewControllers(tabbars: [BPTabbarModel]) {
+    func setUpAllChildViewControllers(tabbars: [ABTabbarModel]) {
         for model in tabbars {
             let clsStr = model.clsName
             let childVc = clsStr.viewController

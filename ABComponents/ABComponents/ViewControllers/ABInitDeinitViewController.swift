@@ -1,5 +1,5 @@
 //
-//  AllocDellocViewController.swift
+//  ABInitDeinitViewController.swift
 //  ABComponents
 //
 //  Created by wupeng on 2017/12/19.
@@ -13,7 +13,7 @@ import BPComponents
     var s_allocInfo : Dictionary<String, Int> = [:]
 #endif
 
-open class BPInitDeinitViewController: UIViewController {
+open class ABInitDeinitViewController: UIViewController {
     open override func viewDidLoad() {
         super .viewDidLoad()
     }

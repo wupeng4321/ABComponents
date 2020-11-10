@@ -1,5 +1,5 @@
 //
-//  BPTabbarModel.swift
+//  ABTabbarModel.swift
 //  ABComponents
 //
 //  Created by wupeng on 2020/10/26.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class BPTabbarModel: NSObject {
+open class ABTabbarModel: NSObject {
     open var clsName: String = ""
     open var title: String = ""
     open var imageName: String = ""

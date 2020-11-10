@@ -1,5 +1,5 @@
 //
-//  BPNavigationController.swift
+//  ABNavigationController.swift
 //  ABComponents
 //
 //  Created by wupeng on 2020/10/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BPNavigationController: UINavigationController {
+open class ABNavigationController: UINavigationController {
     public init() {
         super.init(nibName: nil, bundle: nil)
     }

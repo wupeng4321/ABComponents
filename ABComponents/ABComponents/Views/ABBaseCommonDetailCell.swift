@@ -22,9 +22,9 @@ open class ABBaseCommonDetailCell: ABBaseCommonCell {
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         var value = 0
-        value = value | CommonViewComponent.CommonImageView.rawValue
-        value = value | CommonViewComponent.CommonLabel.rawValue
-        value = value | CommonViewComponent.CommonSubLabel.rawValue
+        value |= CommonViewComponent.CommonImageView.rawValue
+        value |= CommonViewComponent.CommonLabel.rawValue
+        value |= CommonViewComponent.CommonSubLabel.rawValue
         self.showArrowLabel = true
         self.viewComponentValue = value
     }
@@ -56,6 +56,7 @@ open class ABBaseCommonDetailCell: ABBaseCommonCell {
         
         self.subLabel.textColor = Theme.colorText
         self.subLabel.font = Theme.font14
+        self.subLabel.numberOfLines = 0
         
     }
     
@@ -74,6 +75,7 @@ open class ABBaseCommonDetailCell: ABBaseCommonCell {
             make.left.equalTo(self.label.snp.right).offset(0)
             make.right.bottom.equalToSuperview().offset(-bp_padding)
             make.top.equalToSuperview().offset(bp_padding)
+            make.bottom.equalToSuperview().offset(-bp_padding)
         }
     }
 }

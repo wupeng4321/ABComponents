@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import BPComponents
 
-open class ABBaseViewController: BPInitDeinitViewController {
+open class ABBaseViewController: ABInitDeinitViewController {
     open override func viewDidLoad() {
         super .viewDidLoad()
         self.initNavbar()

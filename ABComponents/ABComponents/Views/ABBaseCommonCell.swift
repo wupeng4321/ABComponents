@@ -138,16 +138,16 @@ open class ABBaseCommonCell: ABBaseCell {
         return textView
     }()
     
-    open override func prepareForReuse() {
-        self.label.isHidden         = true
-        self.subLabel.isHidden      = true
-        self.ssubLabel.isHidden     = true
-        self.button.isHidden        = true
-        self.subButton.isHidden     = true
-        self.imgView.isHidden       = true
-        self.subImgView.isHidden    = true
-        self.commonSwitch.isHidden  = true
-        self.textField.isHidden     = true
-        self.textView.isHidden      = true
-    }
+//    open override func prepareForReuse() {
+//        self.label.isHidden         = true
+//        self.subLabel.isHidden      = true
+//        self.ssubLabel.isHidden     = true
+//        self.button.isHidden        = true
+//        self.subButton.isHidden     = true
+//        self.imgView.isHidden       = true
+//        self.subImgView.isHidden    = true
+//        self.commonSwitch.isHidden  = true
+//        self.textField.isHidden     = true
+//        self.textView.isHidden      = true
+//    }
 }
