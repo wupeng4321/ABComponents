@@ -26,18 +26,37 @@ public func ABLocalString(_ str:String) -> String {
     return NSLocalizedString(str, comment: "default")
 }
 
+public func bp_isEmptyStr(_ str:Any?) -> Bool {
+    let s = bp_safeString(str)
+    return s.count == 0
+}
+
 public func bp_safeString(_ str:Any?) -> String {
     guard str != nil else { return "" }
-    guard str is NSNull else { return "" }
     guard str is String else { return "" }
     return str as! String
 }
 
-public func bp_StrHasValue(_ str:String?) -> Bool {
-    guard let str = str else {
-        return false
+public func bp_isEmptyArr(_ arr:Any?) -> Bool {
+    guard arr != nil else { return true }
+    guard arr is Array<Any> else {
+        return true
     }
-    return str.count > 0
+    guard (arr as! Array<Any>).count > 0  else {
+        return true
+    }
+    return false
+}
+
+public func bp_isEmptyDic(_ dic:Any?) ->Bool {
+    guard dic != nil else { return true }
+    guard dic is Dictionary<String, Any> else {
+        return true
+    }
+    guard (dic as! Dictionary<String, Any>).keys.count > 0  else {
+        return true
+    }
+    return false
 }
 
 //==========================================================================
@@ -73,11 +92,8 @@ public func ColorFromRGBA(_ hexColor:Int, _ alpha:CGFloat) -> UIColor {
 //MARK - screen size tools
 //==========================================================================
 
-public var kAppVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
-public let kAppAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-
-public let bp_padding = CGFloat(15)
-public let bp_totalPadding = bp_padding * 2
+public var bp_appVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
+public let bp_appAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
 
 public let ios9  = { () -> Bool in
     if #available(iOS 9.0, *) {
@@ -137,6 +153,7 @@ public func calculateSize(text:String, font: UIFont, size:CGSize?) -> CGRect {
 public func calculateLabelWidth(_ label:UILabel) -> CGFloat {
     return calculateWidth(str: label.text! + " ", font: label.font!)
 }
+
 
 
 

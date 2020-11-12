@@ -44,14 +44,14 @@ open class ABBaseInputCell: ABBaseCommonCell {
     
     public override func customizeLayout() {
         self.label.snp.makeConstraints { (make) in
-            make.left.top.equalToSuperview().offset(bp_padding)
-            make.right.equalToSuperview().offset(-bp_padding)
+            make.left.top.equalToSuperview().offset(bp_padding_h)
+            make.right.equalToSuperview().offset(-bp_padding_h)
             make.height.equalTo(16)
         }
         
         self.textView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(bp_padding)
-            make.right.bottom.equalToSuperview().offset(-bp_padding)
+            make.left.equalToSuperview().offset(bp_padding_h)
+            make.right.bottom.equalToSuperview().offset(-bp_padding_h)
             make.top.equalTo(self.label.snp.bottom).offset(8)
             make.height.equalTo(60)
         }

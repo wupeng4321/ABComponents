@@ -62,7 +62,7 @@ open class ABBaseCell: UITableViewCell {
         
         self.arrowRightLabel.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview().offset(0)
-            make.right.equalToSuperview().offset(-bp_padding)
+            make.right.equalToSuperview().offset(-bp_padding_h)
             make.width.equalTo(10)
             make.height.equalTo(14)
         }
