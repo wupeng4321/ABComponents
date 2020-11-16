@@ -13,9 +13,11 @@ import BPComponents
 
 open class ABBaseCommonDetailCellModel: NSObject, HandyJSON {
     required public override init() {}
+    public var image: String?
     public var title: String?
     public var detail: String?
     public var detailDes: String?
+    public var open: Bool?
 }
 
 
@@ -31,8 +33,8 @@ open class ABBaseCommonDetailCell: ABBaseCommonCell {
         self.viewComponentValue = value
         self.configUI()
         self.arrowRightLabel.snp.remakeConstraints { (make) in
-            make.top.equalToSuperview().offset(bp_padding_h)
-            make.right.equalToSuperview().offset(-bp_padding_h)
+            make.top.equalToSuperview().offset(bp_padding_v)
+            make.right.equalToSuperview().offset(-bp_padding_v)
             make.width.equalTo(10)
             make.height.equalTo(14)
         }
@@ -51,6 +53,7 @@ open class ABBaseCommonDetailCell: ABBaseCommonCell {
                 self.subLabel.text = model.detail
                 self.ssubLabel.text = model.detailDes
                 self.ssubLabel.isHidden = bp_isEmptyStr(model.detailDes)
+                self.imgView.isHidden = model.image == nil
                 self.customizeLayout()
             }
             if (self.cellModel?.componentValue)! > 0 {
@@ -79,23 +82,40 @@ open class ABBaseCommonDetailCell: ABBaseCommonCell {
     public override func customizeLayout() {
         
         let width: CGFloat = (self.label.text?.singleLineWidth(with: self.label.font)) ?? 0
+        var labelx = bp_padding_v
+        
+        let imgWidth = self.label.font.lineHeight
+        self.imgView.snp.remakeConstraints { (make) in
+            make.left.top.equalToSuperview().offset(bp_padding_v)
+            make.width.height.equalTo(imgWidth)
+        }
+        if !self.imgView.isHidden {
+            labelx += imgWidth
+        }
         
         self.label.snp.remakeConstraints { (make) in
-            make.left.top.equalToSuperview().offset(bp_padding_h)
+            make.top.equalToSuperview().offset(bp_padding_v)
+            make.left.equalToSuperview().offset(labelx)
             make.height.equalTo(self.label.font.lineHeight)
             make.width.equalTo(width + 4)
+            if self.ssubLabel.isHidden {
+                make.bottom.equalToSuperview().offset(-bp_padding_v)
+            }
         }
         
         self.subLabel.snp.remakeConstraints { (make) in
             make.left.equalTo(self.label.snp.right).offset(0)
-            make.right.equalToSuperview().offset(-bp_padding_h)
-            make.top.equalToSuperview().offset(bp_padding_h)
+            make.right.equalToSuperview().offset(-bp_padding_v)
+            make.top.equalToSuperview().offset(bp_padding_v)
         }
-        
-        self.ssubLabel.snp.remakeConstraints { (make) in
-            make.top.equalTo(self.label.snp.bottom).offset(4)
-            make.left.equalToSuperview().offset(bp_padding_h)
-            make.right.bottom.equalToSuperview().offset(-bp_padding_h)
+        if self.ssubLabel.isHidden {
+            self.ssubLabel.snp.removeConstraints()
+        } else {
+            self.ssubLabel.snp.remakeConstraints { (make) in
+                make.top.equalTo(self.label.snp.bottom).offset(4)
+                make.left.equalToSuperview().offset(bp_padding_v)
+                make.right.bottom.equalToSuperview().offset(-bp_padding_v)
+            }
         }
     }
 }

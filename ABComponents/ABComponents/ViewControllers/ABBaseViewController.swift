@@ -12,7 +12,8 @@ import BPComponents
 
 open class ABBaseViewController: ABInitDeinitViewController {
     open override func viewDidLoad() {
-        super .viewDidLoad()
+        super.viewDidLoad()
+        self.view.backgroundColor = Theme.colorWhite
         self.initNavbar()
     }
     
