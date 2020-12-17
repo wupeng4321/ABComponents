@@ -29,7 +29,7 @@ open class ABInitDeinitViewController: UIViewController {
     
     deinit {
         #if DEBUG
-        ABLog("\(NSStringFromClass(type(of: self)))----------------释放类----------------")
+        BPLog("\(NSStringFromClass(type(of: self)))----------------释放类----------------")
         let str:String = NSStringFromClass(type(of: self))
         if s_allocInfo[str] != nil {
             s_allocInfo[str] = s_allocInfo[str]! - 1
@@ -43,7 +43,7 @@ open class ABInitDeinitViewController: UIViewController {
     
     func allocInit() {
         #if DEBUG
-        ABLog("\(NSStringFromClass(type(of: self)))----------------创建类----------------")
+        BPLog("\(NSStringFromClass(type(of: self)))----------------创建类----------------")
 
         let str:String = NSStringFromClass(type(of: self))
         if s_allocInfo[str] != nil {
@@ -61,7 +61,7 @@ open class ABInitDeinitViewController: UIViewController {
         for (key, value) in s_allocInfo {
             s_allocInfoStr += "\(key) : \(value)\n"
         }
-        ABLog(s_allocInfoStr)
+        BPLog(s_allocInfoStr)
             
         #endif
     }

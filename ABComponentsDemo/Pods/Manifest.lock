@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BPComponents:
-    :commit: 3e32f75770c1675ba5a66887c202359627ebfd7d
+    :commit: 43df9381d2924876d25ea9780dd050775ff7fa07
     :git: https://github.com/wupeng4321/BPComponents.git
 
 SPEC CHECKSUMS:
